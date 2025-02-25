@@ -301,6 +301,7 @@ module defenderForCloud '../../modules/defender-for-cloud.bicep' =
     params: {
       emailSecurityContact: emailSecurityContact
       logAnalyticsWorkspaceId: logAnalyticsWorkspaceResourceId
+      enableAutoProvisioning: false
     }
   }
 
