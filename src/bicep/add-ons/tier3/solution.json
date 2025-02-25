@@ -5,7 +5,7 @@
     "_generator": {
       "name": "bicep",
       "version": "0.32.4.45862",
-      "templateHash": "13485368315545654067"
+      "templateHash": "5434056264839645395"
     }
   },
   "parameters": {
@@ -2127,7 +2127,8 @@
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2022-09-01",
       "name": "[format('deploy-vnet-links-{0}-sub-{1}', parameters('workloadShortName'), parameters('deploymentNameSuffix'))]",
-      "resourceGroup": "[variables('hubResourceGroupName')]",
+      "subscriptionId": "[split(parameters('hubVirtualNetworkResourceId'), '/')[2]]",
+      "resourceGroup": "[split(parameters('hubVirtualNetworkResourceId'), '/')[4]]",
       "properties": {
         "expressionEvaluationOptions": {
           "scope": "inner"
